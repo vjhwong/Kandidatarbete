@@ -1,0 +1,30 @@
+{
+	"Prio 1": {
+			"Coagulase-negative staphylococci": ["Vancomycin"],
+			"Staphylococcus aureus": ["Cefoxitin", "Ceftaroline","Vancomycin", "Linezolid","Daptomycin"],
+			"Staphylococcus lugdunensis": ["Cefoxitin", "Vancomycin"],
+			"Enterococcus faecium": ["Ampicillin","Vancomycin","Linezolid", "Daptomycin"],
+			"Enterococcus faecalis":["Ampicillin", "Vancomycin", "Linezolid", "Daptomycin"]
+	},
+	"Prio 2": {
+			"Streptococcus pneumoniae": ["Benzylpenicillin", "Ceftriaxone", "Levofloxacin", "Vancomycin","Erythromycin","Clindamycin","Linezolid", "Trimethroprimsulfamethoxazole","D-test"],
+			"Viridans group streptococci": ["Benzylpenicillin", "Ampicillin","Ceftriaxone", "Vancomycin","Linezolid"],
+			"Streptococcus spp": ["Benzylpenicillin", "Ampicillin","Ceftriaxone", "Levofloxacin", "Vancomycin","Erythromycin","Clindamycin","Linezolid","D-test"]
+	},
+	"Prio 3": {
+			"Coagulase-negative staphylococci": ["Erythromycin", "Clindamycin", "Linezolid","D-test"],
+			"Staphylococcus aureus": ["Ciprofloxacin", "Dalbavancin","Clindamycin", "Trimethroprimsulfamethoxazole","Rifampicin","D-test"],
+			"Staphylococcus lugdunensis":["Dalbavancin","Clindamycin", "Linezolid","Trimethroprimsulfamethoxazole","Daptomycin","Rifampicin","D-test"],
+			"Enterococcus faecium": ["Gentamicin"],
+			"Enterococcus faecalis":["Gentamicin"]
+	},
+	"Prio 4": {
+			"Coagulase-negative staphylococci": ["Tetracycline"],
+			"Staphylococcus aureus": ["Benzylpenicillin", "Tetracycline"],
+			"Staphylococcus lugdunensis": ["Benzylpenicillin", "Tetracycline"],
+			"Streptococcus pneumoniae": ["Meropenem","Tetracycline"]
+	}
+
+}
+  
+

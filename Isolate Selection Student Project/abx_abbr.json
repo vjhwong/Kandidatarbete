@@ -1,0 +1,76 @@
+ {
+
+    "AMC": "Amoxicillin-clavulanic acid",
+
+    "AMI": "Amikacin",
+
+    "AMP": "Ampicillin",
+
+    "AMS": "Ampicillin-sulbactam",
+
+    "AZT": "Aztreonam",
+
+    "CAV": "Ceftazidime-avibactam",
+
+    "CAZ": "Ceftazidime",
+
+    "CEP": "Cefepime",
+
+    "CIP": "Ciprofloxacin",
+
+    "COL": "Colistin",
+
+    "COX": "Cefoxitin",
+
+    "CRX": "Ceftriaxone",
+
+    "CTA": "Ceftolozane-tazobactam",
+
+    "CTX": "Cefotaxime",
+
+    "CUR": "Cefuroxime",
+
+    "CZO": "Cefazolin",
+
+    "ERT": "Ertapenem",
+
+    "GEN": "Gentamicin",
+
+    "IMI": "Imipenem",
+
+    "LEV": "Levofloxacin",
+
+    "MER": "Meropenem",
+
+    "MEV": "Meropenem-vaborbactam",
+
+    "PIT": "Piperacillin-tazobactam",
+
+    "TGC": "Tigecycline",
+
+    "TOB": "Tobramycin",
+
+    "TRS": "Trimethoprim-sulfamethoxazole",
+
+    "PEN": "Benzylpenicillin",
+
+    "CTL": "Ceftaroline",
+
+    "CLI": "Clindamycin",
+
+    "DAL": "Dalbavancin",
+
+    "DPT": "Daptomycin",
+
+    "ERY": "Erythromycin",
+
+    "LIN": "Linezolid",
+
+    "OPT": "Optochin",
+
+    "TET": "Tetracycline",
+
+    "VAN": "Vancomycin"
+
+
+}

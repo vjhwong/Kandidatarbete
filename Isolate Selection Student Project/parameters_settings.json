@@ -1,0 +1,109 @@
+{
+	"Datasets": ["EU"],
+
+	"Kit Software Version": "ASTar BC G+ (development)",
+	
+	"Upper fill": [true, 400],
+
+	"Bugdrug fill": [true, 5],
+	
+	"Lower limit": [false, 50],
+	
+	"Isolates per species": {"Fill group": true,
+
+	"Coagulase-negative staphylococci": {
+			"Staphylococcus epidermidis":5,
+	 		"Staphylococcus hominis": 5,
+			"Staphylococcus capitis": 5,
+			"Staphylococcus haemolyticus": 5,
+			"Staphylococcus warneri": 5,
+			"Staphylococcus auricularis": 5,
+			"Overall": 30,
+			"Fastidious": "Non-fastidious"
+		},
+
+	"Staphylococcus aureus": {
+			"Staphylococcus aureus": 5,
+			"Overall": 5,
+			"Fastidious": "Non-fastidious" 
+		},
+
+	"Staphylococcus lugdunensis": {
+			"Staphylococcus lugdunensis": 5,
+			"Overall": 5,
+			"Fastidious": "Non-fastidious"
+		},
+
+	"Enterococcus faecium": {
+			"Enterococcus faecium": 5,
+			"Overall": 5,
+			"Fastidious": "Non-fastidious"
+		},
+
+	"Enterococcus faecalis": {
+			"Enterococcus faecalis": 5,
+			"Overall": 5,
+			"Fastidious": "Non-fastidious"
+		},
+
+	"Streptococcus pneumoniae": {
+			"Streptococcus pneumoniae": 5,
+			"Overall": 5,
+			"Fastidious": "Fastidious"
+		},
+
+	"Viridans group streptococci": {
+			"Streptococcus mitis": 5,
+			"Streptococcus oralis": 5,
+			"Streptococcus anginosus": 5,
+			"Streptococcus salivarius": 5,
+			"Streptococcus constellatus": 5,
+			"Streptococcus sanguinis": 5,
+			"Overall": 30,
+			"Fastidious": "Fastidious"
+		},
+		
+	"Streptococcus spp": {		
+			"Streptococcus agalactiae": 5,
+			"Streptococcus pyogenes": 5,
+			"Overall": 10,
+			"Fastidious": "Fastidious"
+		}
+
+	},
+
+	"Point system": {
+		"R": 10,
+		"S": 1,
+		"I": 5,
+		"off-scale": 10,
+		"on-scale": 0,
+		"POS": 10, 
+		"NEG": 0
+	},
+
+	"Bugdrug fill requirements 1": {
+		"SIR": "R",
+		"scale": "on-scale",
+		"POS": true
+
+	},
+
+	"Bugdrug fill requirements 2": {
+		"SIR": "R",
+		"scale": "off-scale",
+		"POS": false
+
+	},
+
+	"Bugdrug fill requirements 3": {
+		"SIR": "I",
+		"scale": "on-scale",
+		"POS": ""
+
+	}
+
+
+}
+  
+

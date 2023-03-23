@@ -7,7 +7,7 @@ import pandas as pd
 import json
 import numpy as np
 import itertools
-from read_cib import *
+from read_cib import get_data, rank_system
 
 # Neccessary files:
 # read_cib.py

@@ -474,11 +474,11 @@ def main(CIB, parameters, ranges, abx_abbr, market_prio):
 if __name__ == "__main__":
 
     # Input
-    CIB = "CIB_TF-data_AllIsolates_20230302.xlsx"
-    parameters = "parameters_settings.json"
-    ranges = "ranges.json"
-    abx_abbr = "abx_abbr.json"
-    market_prio = "market_prio.json"
+    CIB = "Isolate Selection Student Project\CIB_TF-data_AllIsolates_20230302.xlsx"
+    parameters = "Isolate Selection Student Project\parameters_settings.json"
+    ranges = "Isolate Selection Student Project/ranges.json"
+    abx_abbr = "Isolate Selection Student Project/abx_abbr.json"
+    market_prio = "Isolate Selection Student Project\market_prio.json"
 
     [chosen_isolates, sorted_dataset, errors] = main(
         CIB, parameters, ranges, abx_abbr, market_prio

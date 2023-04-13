@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import plotly.graph_objects as go
 
 
 def extract_chosen_isolates(
@@ -167,7 +168,7 @@ def create_plot_df(
     return plot_df
 
 
-def plotly_dotplot(plot_df: pd.DataFrame, antibiotics: list) -> None:
+def px_dotplot(plot_df: pd.DataFrame, antibiotics: list) -> None:
 
     # Set ticks of x axis
     x_axis = [i for i in range(len(antibiotics))]

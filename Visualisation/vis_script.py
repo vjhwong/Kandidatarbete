@@ -204,6 +204,7 @@ def plotly_dotplot(plot_df: pd.DataFrame, antibiotics: list) -> None:
         y="Log2(MIC-value)",
         hover_name="Isolate names",
         color="SIR",
+        opacity=0.6,
         title="Isolate log2(MIC-values) for different antibiotics",
         range_y=[-11, 12],
         hover_data={

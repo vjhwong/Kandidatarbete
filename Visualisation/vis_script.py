@@ -226,6 +226,7 @@ def plotly_dotplot(plot_df: pd.DataFrame, antibiotics: list) -> None:
             raise ValueError("Not a valid trace")
 
     def update_trace(trace):
+        """Function that updates traces"""
         change_trace_color(trace)
 
     # Update dot color

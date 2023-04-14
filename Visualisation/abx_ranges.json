@@ -1,0 +1,57 @@
+{
+    "Benzylpenicillin": {
+        "S-R": 8
+    },
+    "Ampicillin": {
+        "S-R": 8
+    },
+    "Cefoxitin": {
+        "S-R": 4
+    },
+    "Ceftaroline": {
+        "S-R": 1
+    },
+    "Ceftriaxone": {
+        "S-R": 1
+    },
+    "Meropenem": {
+        "S-R": 0.25
+    },
+    "Ciprofloxacin": {
+        "S-R": 1
+    },
+    "Levofloxacin": {
+        "S-R": 2
+    },
+    "Gentamicin": {
+        "S-R": 256
+    },
+    "Dalbavancin": {},
+    "Vancomycin": {
+        "S-I": 4,
+        "I-R": 8
+    },
+    "Erythromycin": {
+        "S-I": 0.5,
+        "I-R": 2
+    },
+    "Clindamycin": {
+        "S-I": 0.5,
+        "I-R": 1
+    },
+    "Tetracycline": {
+        "S-R": 4
+    },
+    "Linezolid": {
+        "S-R": 4
+    },
+    "Daptomycin": {
+        "S-R": 4
+    },
+    "Trimethoprim-sulfamethoxazole": {
+        "S-I": 0.5,
+        "I-R": 1
+    },
+    "D-test": {},
+    "Optochin": {}
+}

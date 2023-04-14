@@ -1,11 +1,11 @@
 {
     "Benzylpenicillin": {
         "Lower": "0.00781",
-        "Upper": "16"
+        "Upper": "16.0"
     },
     "Ampicillin": {
         "Lower": "0.00781",
-        "Upper": "16"
+        "Upper": "16.0"
     },
     "Cefoxitin": {
         "Lower": "Min_C",
@@ -21,7 +21,7 @@
     },
     "Ceftriaxone": {
         "Lower": "0.00781",
-        "Upper": "16"
+        "Upper": "16.0"
     },
     "Imipenem": {
         "Lower": "Min_C",
@@ -29,7 +29,7 @@
     },
     "Meropenem": {
         "Lower": "0.00781",
-        "Upper": "8"
+        "Upper": "8.0"
     },
     "Ciprofloxacin": {
         "Lower": "Min_C",
@@ -37,7 +37,7 @@
     },
     "Levofloxacin": {
         "Lower": "0.03125",
-        "Upper": "16"
+        "Upper": "16.0"
     },
     "Gentamicin": {
         "Lower": "Min_C",
@@ -49,27 +49,27 @@
     },
     "Teicoplanin": {
         "Lower": "0.03125",
-        "Upper": "8"
+        "Upper": "8.0"
     },
     "Vancomycin": {
         "Lower": "0.03125",
-        "Upper": "8"
+        "Upper": "8.0"
     },
     "Erythromycin": {
         "Lower": "0.00391",
-        "Upper": "4"
+        "Upper": "4.0"
     },
     "Clindamycin": {
         "Lower": "0.00781",
-        "Upper": "4"
+        "Upper": "4.0"
     },
     "Tetracycline": {
         "Lower": "0.01563",
-        "Upper": "16"
+        "Upper": "16.0"
     },
     "Linezolid": {
         "Lower": "0.0625",
-        "Upper": "8"
+        "Upper": "8.0"
     },
     "Daptomycin": {
         "Lower": "Min_C",

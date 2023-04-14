@@ -1,3 +1,6 @@
+import numpy as np
+
+
 def count_gap_length(valid_list: list) -> float:
     total_gap_length = 0
     gap_length = 0
@@ -27,7 +30,7 @@ def check_edges(valid_list: list) -> float:
     return edge_penalty
 
 
-def score_fill_list(fill_list: list) -> float:
+def score_mic_spread_list(fill_list: list) -> float:
     valid_list = [i for i in fill_list if i is not None]
 
     if len(valid_list) <= 1:
@@ -37,4 +40,14 @@ def score_fill_list(fill_list: list) -> float:
     penalty += count_gap_length(valid_list)
     penalty += check_edges(valid_list)
 
+    # Lägg till att dela med längden av listan
     return penalty
+
+
+def fill_mic_spread_list(
+    mic_spread_list: list, unique_mic_values: set, concentration_to_index_convert: dict
+) -> None:
+
+    for mic_value in unique_mic_values:
+        index = int(np.log2(mic_value) + 10)
+        mic_spread_list[index] = 1

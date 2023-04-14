@@ -23,6 +23,10 @@
         "Lower": "0.00781",
         "Upper": "16"
     },
+    "Imipenem": {
+        "Lower": "Min_C",
+        "Upper": "Max_C"
+    },
     "Meropenem": {
         "Lower": "0.00781",
         "Upper": "8"

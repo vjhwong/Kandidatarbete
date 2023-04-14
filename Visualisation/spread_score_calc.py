@@ -121,10 +121,15 @@ def create_spread_dict(
     }
 
     for (_, ranges), (_, spread) in zip(antibiotic_ranges.items(), spread_dict.items()):
+        # Store lower and upper concentration range of the antibiotic
         lower_limit, upper_limit = ranges["Lower"], ranges["Upper"]
+
+        # Dont leave the spread list untouched for abx with on-scale values
+        # on entire range
         if lower_limit == "Min_C" and upper_limit == "Max_C":
             pass
         else:
+            # Convert limits from concentration to respective index position
             lower_limit_index = concentration_to_index_convert[lower_limit]
             upper_limit_index = concentration_to_index_convert[upper_limit]
             for index in range(len(spread)):

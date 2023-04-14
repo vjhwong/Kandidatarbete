@@ -1,57 +1,82 @@
 {
     "Benzylpenicillin": {
-        "S-R": 8
+        "Lower": "0.00781",
+        "Upper": "16"
     },
     "Ampicillin": {
-        "S-R": 8
+        "Lower": "0.00781",
+        "Upper": "16"
     },
     "Cefoxitin": {
-        "S-R": 4
+        "Lower": "Min_C",
+        "Upper": "Max_C"
     },
     "Ceftaroline": {
-        "S-R": 1
+        "Lower": "Min_C",
+        "Upper": "Max_C"
     },
     "Ceftriaxone": {
-        "S-R": 1
+        "Lower": "0.00781",
+        "Upper": "16"
     },
     "Meropenem": {
-        "S-R": 0.25
+        "Lower": "0.00781",
+        "Upper": "8"
     },
     "Ciprofloxacin": {
-        "S-R": 1
+        "Lower": "Min_C",
+        "Upper": "Max_C"
     },
     "Levofloxacin": {
-        "S-R": 2
+        "Lower": "0.03125",
+        "Upper": "16"
     },
     "Gentamicin": {
-        "S-R": 256
+        "Lower": "Min_C",
+        "Upper": "Max_C"
     },
-    "Dalbavancin": {},
+    "Dalbavancin": {
+        "Lower": "Min_C",
+        "Upper": "Max_C"
+    },
+    "Teicoplanin": {
+        "Lower": "0.03125",
+        "Upper": "8"
+    },
     "Vancomycin": {
-        "S-I": 4,
-        "I-R": 8
+        "Lower": "0.03125",
+        "Upper": "8"
     },
     "Erythromycin": {
-        "S-I": 0.5,
-        "I-R": 2
+        "Lower": "0.00391",
+        "Upper": "4"
     },
     "Clindamycin": {
-        "S-I": 0.5,
-        "I-R": 1
+        "Lower": "0.00781",
+        "Upper": "4"
     },
     "Tetracycline": {
-        "S-R": 4
+        "Lower": "0.01563",
+        "Upper": "16"
     },
     "Linezolid": {
-        "S-R": 4
+        "Lower": "0.0625",
+        "Upper": "8"
     },
     "Daptomycin": {
-        "S-R": 4
+        "Lower": "Min_C",
+        "Upper": "Max_C"
     },
     "Trimethoprim-sulfamethoxazole": {
-        "S-I": 0.5,
-        "I-R": 1
+        "Lower": "Min_C",
+        "Upper": "Max_C"
     },
-    "D-test": {},
-    "Optochin": {}
+    "D-test": {
+        "Lower": "Min_C",
+        "Upper": "Max_C"
+    },
+    "Optochin": {
+        "Lower": "Min_C",
+        "Upper": "Max_C"
+    }
 }

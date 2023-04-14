@@ -114,6 +114,31 @@ def main():
         columns={"Trimethoprim-sulfamethoxazole": "Trimeth-sulf"}, inplace=True
     )
 
+    total_concentration_range = [
+        "Min C",
+        "0.00195",
+        "0.00391",
+        "0.00781",
+        "0.01563",
+        "0.03125",
+        "0.0625",
+        "0.125",
+        "0.25",
+        "0.5",
+        "1",
+        "2",
+        "4",
+        "8",
+        "16",
+        "32",
+        "64",
+        "128",
+        "256",
+        "512",
+        "1024",
+        "Max C",
+    ]
+
     # Select isolates
     chosen_isolates = extract_chosen_isolates(chosen_isolates_list, matrix_EU)
 

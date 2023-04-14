@@ -129,3 +129,7 @@ def main():
 
     # Extract the mic-values of each isolate for each antibiotic.
     mic_data = extract_mic_data(filtered_chosen_isolates_SIR, antibiotics)
+
+
+if __name__ == "__main__":
+    main()

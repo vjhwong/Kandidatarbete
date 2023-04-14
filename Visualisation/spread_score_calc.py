@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import json
 from pprint import pprint
 
 
@@ -108,7 +109,7 @@ def main():
     chosen_isolates_list = pd.read_csv("Visualisation/Chosen_isolates_list.csv")
     CIB = pd.ExcelFile("Visualisation/CIB_TF-data_AllIsolates_20230302.xlsx")
     matrix_EU = pd.read_excel(CIB, "matrix EU")
-
+    antibiotics_ranges = json.load(open("abx_ranges.json"))
     # Rename a long name for plotting purposes
     matrix_EU.rename(
         columns={"Trimethoprim-sulfamethoxazole": "Trimeth-sulf"}, inplace=True

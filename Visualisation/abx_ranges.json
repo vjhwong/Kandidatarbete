@@ -75,6 +75,10 @@
         "Lower": "Min_C",
         "Upper": "Max_C"
     },
+    "Rifampicin": {
+        "Lower": "Min_C",
+        "Upper": "Max_C"
+    },
     "Trimethoprim-sulfamethoxazole": {
         "Lower": "Min_C",
         "Upper": "Max_C"

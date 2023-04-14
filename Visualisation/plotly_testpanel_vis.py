@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import plotly.express as px
+from pprint import pprint
 
 
 def extract_chosen_isolates(
@@ -270,14 +271,15 @@ def main():
 
     # Remove the tuples that have None in their SIR data
     filtered_chosen_isolates_SIR = filter_mic_values(chosen_isolates_SIR)
+    pprint(filtered_chosen_isolates_SIR)
 
     # Extract the mic-values of each isolate for each antibiotic.
     mic_data = extract_mic_data(filtered_chosen_isolates_SIR, antibiotics)
 
     # Create dataframe used for plotting
-    plot_df = create_plot_df(antibiotics, mic_data)
+    # plot_df = create_plot_df(antibiotics, mic_data)
 
-    plotly_dotplot(plot_df, antibiotics)
+    # plotly_dotplot(plot_df, antibiotics)
 
 
 if __name__ == "__main__":

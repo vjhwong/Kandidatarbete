@@ -15,6 +15,10 @@
         "Lower": "Min_C",
         "Upper": "Max_C"
     },
+    "Ceftobiprole": {
+        "Lower": "Min_C",
+        "Upper": "Max_C"
+    },
     "Ceftriaxone": {
         "Lower": "0.00781",
         "Upper": "16"

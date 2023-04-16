@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import plotly.express as px
-from pprint import pprint
 from data_extraction_functions import (
     extract_chosen_isolates,
     extract_mic_data,
@@ -117,8 +116,8 @@ def plotly_dotplot(plot_df: pd.DataFrame, antibiotics: list) -> None:
         template="plotly_dark",
         hover_data={
             "Antibiotics": False,
-            "Log2(MIC-value)": ":.0f",
-            "Scale": True,
+            "Log2(MIC-value)": False,
+            "Scale": False,
             "Pathogen": True,
         },
     )
@@ -134,12 +133,8 @@ def plotly_dotplot(plot_df: pd.DataFrame, antibiotics: list) -> None:
         else:
             raise ValueError("Not a valid trace")
 
-    def update_trace(trace):
-        """Function that updates traces"""
-        change_trace_color(trace)
-
     # Update dot color
-    fig.for_each_trace(update_trace)
+    fig.for_each_trace(change_trace_color)
 
     # Modify x-ticks, y-ticks, legend and title
     fig.update_layout(

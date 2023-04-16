@@ -1,5 +1,18 @@
 import numpy as np
 
+"""
+Functions used to calculate spread of bacterial isolates MIC values for an antibiotic using method developed by
+Victor Wong and Hanna Malmvall 12 April 20223. Also contains one function that fills a
+spread list given the unique MIC values of an antibiotic.  
+
+Rules:
+1. Count number of empty values in a row and subtract one.
+2. Add 0.5 penalty for each empty edge. 
+
+Author: Victor Wong
+Date: 16 April 2023
+"""
+
 
 def count_gap_length(valid_list: list) -> float:
     total_gap_length = 0
@@ -22,9 +35,10 @@ def count_gap_length(valid_list: list) -> float:
 def check_edges(valid_list: list) -> float:
     edge_penalty = 0
 
-    if valid_list[0] == 0:
+    # Add 0.5 penalty if the edge values are empty.
+    if valid_list[0] == 0:  # Check first value
         edge_penalty += 0.5
-    if valid_list[-1] == 0:
+    if valid_list[-1] == 0:  # Check last value
         edge_penalty += 0.5
 
     return edge_penalty
@@ -41,11 +55,12 @@ def score_mic_spread_list(fill_list: list) -> float:
     penalty += check_edges(valid_list)
 
     # Lägg till att dela med längden av listan
-    return penalty
+    return penalty / len(valid_list)
 
 
 def fill_mic_spread_list(
-    mic_spread_list: list, unique_mic_values: set, concentration_to_index_convert: dict
+    mic_spread_list: list,
+    unique_mic_values: list,
 ) -> None:
 
     for mic_value in unique_mic_values:

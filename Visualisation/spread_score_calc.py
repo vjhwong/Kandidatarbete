@@ -8,8 +8,6 @@ from data_extraction_functions import (
     filter_mic_values,
 )
 from spread_list_functions import (
-    count_gap_length,
-    check_edges,
     score_mic_spread_list,
     fill_mic_spread_list,
 )
@@ -127,7 +125,7 @@ def main():
     # Select isolates
     chosen_isolates = extract_chosen_isolates(chosen_isolates_list, matrix_EU)
 
-    # List of antiiotic names
+    # List of antibiotic names
     antibiotics = list(chosen_isolates.columns[3:])
 
     # Extract all SIRs for an antibiotic.
@@ -145,8 +143,15 @@ def main():
 
     score_mic_spread_dict(mic_spread_dict)
 
+    whole_panel_penalty = 0
+
     for abx, (spread_list, penalty) in mic_spread_dict.items():
-        print(f"{abx}: {spread_list} | Penalty: {penalty}")
+        valid_spread_list = [i for i in spread_list if i is not None]
+        print(f"{abx}: {valid_spread_list} | Penalty: {penalty:.2f}")
+        whole_panel_penalty += penalty
+    whole_panel_penalty /= len(mic_spread_dict)
+    print()
+    print(f"Whole panel penalty: {whole_panel_penalty:.2f}")
 
 
 if __name__ == "__main__":

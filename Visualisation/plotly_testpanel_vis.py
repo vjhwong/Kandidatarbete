@@ -114,6 +114,7 @@ def plotly_dotplot(plot_df: pd.DataFrame, antibiotics: list) -> None:
         opacity=0.6,
         title="Isolate log2(MIC-values) for different antibiotics",
         range_y=[-11, 12],
+        template="plotly_dark",
         hover_data={
             "Antibiotics": False,
             "Log2(MIC-value)": ":.0f",
@@ -151,8 +152,8 @@ def plotly_dotplot(plot_df: pd.DataFrame, antibiotics: list) -> None:
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
         title_x=0.5,
     )
-
-    fig.show()
+    fig.write_html("first_figure.html", auto_open=True)
+    # fig.show()
 
 
 def main():
@@ -177,15 +178,14 @@ def main():
 
     # Remove the tuples that have None in their SIR data
     filtered_chosen_isolates_SIR = filter_mic_values(chosen_isolates_SIR)
-    pprint(filtered_chosen_isolates_SIR)
 
     # Extract the mic-values of each isolate for each antibiotic.
     mic_data = extract_mic_data(filtered_chosen_isolates_SIR, antibiotics)
 
     # Create dataframe used for plotting
-    # plot_df = create_plot_df(antibiotics, mic_data)
+    plot_df = create_plot_df(antibiotics, mic_data)
 
-    # plotly_dotplot(plot_df, antibiotics)
+    plotly_dotplot(plot_df, antibiotics)
 
 
 if __name__ == "__main__":

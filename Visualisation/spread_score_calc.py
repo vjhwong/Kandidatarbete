@@ -1,7 +1,5 @@
 import pandas as pd
-import numpy as np
 import json
-from pprint import pprint
 from data_extraction_functions import (
     extract_chosen_isolates,
     extract_SIR,
@@ -56,6 +54,7 @@ def fill_mic_spread_dict(
 
     for antibiotic in antibiotics:
         mic_spread_list = mic_spread_dict[antibiotic]
+        # Creates a set that is converted to a list and then sorted
         unique_mic_values = sorted(
             list(
                 {
@@ -64,15 +63,26 @@ def fill_mic_spread_dict(
                 }
             )
         )
-        fill_mic_spread_list(
-            mic_spread_list, unique_mic_values, concentration_to_index_convert
-        )
+        fill_mic_spread_list(mic_spread_list, unique_mic_values)
     return mic_spread_dict
 
 
 def score_mic_spread_dict(mic_spread_dict: dict):
     for antibiotic, spread_list in mic_spread_dict.items():
         mic_spread_dict[antibiotic] = (spread_list, score_mic_spread_list(spread_list))
+
+
+def score_whole_panel(mic_spread_dict: dict) -> int:
+    whole_panel_penalty = 0
+    print(f"{'Antibiotic':<30}|{'Penalty'}| Valid spread list")
+    for abx, (spread_list, penalty) in mic_spread_dict.items():
+        valid_spread_list = [i for i in spread_list if i is not None]
+        print(f"{abx:29} | {round(penalty, 2):<5} | {valid_spread_list}  ")
+        # print(f"{abx:<10}: {valid_spread_list} | Penalty: {penalty:.2f}")
+        whole_panel_penalty += penalty
+
+    whole_panel_penalty /= len(mic_spread_dict)
+    print(f"\nWhole panel penalty: {whole_panel_penalty:.2f}")
 
 
 def main():
@@ -143,15 +153,7 @@ def main():
 
     score_mic_spread_dict(mic_spread_dict)
 
-    whole_panel_penalty = 0
-
-    for abx, (spread_list, penalty) in mic_spread_dict.items():
-        valid_spread_list = [i for i in spread_list if i is not None]
-        print(f"{abx}: {valid_spread_list} | Penalty: {penalty:.2f}")
-        whole_panel_penalty += penalty
-    whole_panel_penalty /= len(mic_spread_dict)
-    print()
-    print(f"Whole panel penalty: {whole_panel_penalty:.2f}")
+    score_whole_panel(mic_spread_dict)
 
 
 if __name__ == "__main__":

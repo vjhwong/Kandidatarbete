@@ -49,7 +49,6 @@ def fill_mic_spread_dict(
     antibiotics: list,
     filtered_chosen_isolates_SIR: dict,
     mic_spread_dict: dict,
-    concentration_to_index_convert: dict,
 ) -> None:
 
     for antibiotic in antibiotics:
@@ -73,16 +72,16 @@ def score_mic_spread_dict(mic_spread_dict: dict):
 
 
 def score_whole_panel(mic_spread_dict: dict) -> int:
-    whole_panel_penalty = 0
-    print(f"{'Antibiotic':<30}|{'Penalty'}| Valid spread list")
-    for abx, (spread_list, penalty) in mic_spread_dict.items():
+    whole_panel_score = 0
+    print(f"{'Antibiotic':<30}|{'score'}| Valid spread list")
+    for abx, (spread_list, score) in mic_spread_dict.items():
         valid_spread_list = [i for i in spread_list if i is not None]
-        print(f"{abx:29} | {round(penalty, 2):<5} | {valid_spread_list}  ")
-        # print(f"{abx:<10}: {valid_spread_list} | Penalty: {penalty:.2f}")
-        whole_panel_penalty += penalty
+        print(f"{abx:29} | {round(score, 2):<5} | {valid_spread_list}  ")
+        # print(f"{abx:<10}: {valid_spread_list} | score: {score:.2f}")
+        whole_panel_score += score
 
-    whole_panel_penalty /= len(mic_spread_dict)
-    print(f"\nWhole panel penalty: {whole_panel_penalty:.2f}")
+    whole_panel_score /= len(mic_spread_dict)
+    print(f"\nWhole panel score: {whole_panel_score:.2f}")
 
 
 def main():
@@ -148,7 +147,6 @@ def main():
         antibiotics,
         filtered_chosen_isolates_SIR,
         mic_spread_dict,
-        concentration_to_index_convert,
     )
 
     score_mic_spread_dict(mic_spread_dict)

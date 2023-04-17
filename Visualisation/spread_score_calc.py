@@ -73,7 +73,7 @@ def score_mic_spread_dict(mic_spread_dict: dict):
 
 def score_whole_panel(mic_spread_dict: dict) -> int:
     whole_panel_score = 0
-    print(f"{'Antibiotic':<30}|{'score'}| Valid spread list")
+    print(f"{'Antibiotic':<30}|{'Score':<7}| Valid spread list")
     for abx, (spread_list, score) in mic_spread_dict.items():
         valid_spread_list = [i for i in spread_list if i is not None]
         print(f"{abx:29} | {round(score, 2):<5} | {valid_spread_list}  ")

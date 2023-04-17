@@ -53,7 +53,7 @@ def score_mic_spread_list(fill_list: list) -> float:
     penalty = 0
     penalty += count_gap_length(valid_list)
     penalty += check_edges(valid_list)
-    print(penalty)
+
     score = 1 - penalty / len(valid_list)
     # Lägg till att dela med längden av listan
     return score

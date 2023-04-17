@@ -22,7 +22,9 @@ def create_mic_spread_dict(
         antibiotic: [0 for _ in range(len(total_concentration_range))]
         for antibiotic in antibiotic_ranges
     }
-
+    
+    # Borde kunna förbättras. Kanske combinera värdena till en tuple i samma dict.
+    # Blir kanske lite otydligare variabelnamn dock.
     for (_, ranges), (_, mic_spread) in zip(
         antibiotic_ranges.items(), mic_spread_dict.items()
     ):

@@ -75,9 +75,11 @@ def filter_mic_values(chosen_isolates_SIR: dict) -> None:
     """
     for antibiotic, SIR_data in chosen_isolates_SIR.items():
         # tup = (isolate, mic_value, mic_category, scale, pathogen)
-        chosen_isolates_SIR[antibiotic] = list(
-            (tup for tup in SIR_data if tup[2] is not None)
-        )
+
+        chosen_isolates_SIR[antibiotic] = [
+            tup for tup in SIR_data if tup[2] is not None
+        ]
+
     return chosen_isolates_SIR
 
 
@@ -88,11 +90,11 @@ def extract_mic_data(chosen_isolates_SIR: dict, antibiotics: list) -> list:
     all isolates for an antibiotic.
     """
     mic_values = []
-    # Iterate over all antibioticsz
+    # Iterate over all antibiotics
     for antibiotic in antibiotics:
         # Create a list to hold the mic-values of isolates for that abx
         antibiotic_mic_values = []
-        # Get value of current abx. List of (isolate, mic_value, mic_category)
+        # Get value of current abx.
         SIR_data = chosen_isolates_SIR[antibiotic]
         for isolate, mic_value, mic_category, scale, pathogen in SIR_data:
             antibiotic_mic_values.append(

@@ -45,6 +45,8 @@ def create_plot_df(
             pathogen_list.append(pathogen)
             if scale is True:
                 y_values.append(mic_value_jitter)
+
+            # If off-scale move value to MAX_C or MIN_C
             elif scale is False:
                 if SIR_category == "S":
                     y_values.append(-10)
@@ -74,6 +76,90 @@ def create_plot_df(
     )
 
     return plot_df
+
+
+def add_rectangles_to_plot(fig, antibiotics: list) -> None:
+    names_to_conc = {
+        "Benzylpenicillin": ["0.015 - 32.0", "0.008 - 16.0"],
+        "Ampicillin": ["0.125 - 64.0", "0.008 - 16.0"],
+        "Cefoxitin": ["0.25 - 16.0"],
+        "Ceftaroline": ["0.03125 - 16.0"],
+        "Ceftobiprole": ["0.03125 - 16.0"],
+        "Ceftriaxone": ["0.0078125 - 16.0"],
+        "Imipenem": ["0.03125 - 16.0"],
+        "Meropenem": ["0.0078125 - 8.0"],
+        "Ciprofloxacin": ["0.0625 - 8.0"],
+        "Levofloxacin": ["0.03125 - 16.0"],
+        "Gentamicin": ["128.0 - 500.0"],
+        "Dalbavancin": ["0.015 - 1.0"],
+        "Teicoplanin": ["0.03125 - 16.0", "0.03125 - 8.0"],
+        "Vancomycin": ["0.125 - 64.0", "0.015 - 8.0"],
+        "Erythromycin": ["0.015 - 16.0", "0.004 - 4.0"],
+        "Clindamycin": ["0.015 - 16.0", "0.0078125 - 16.0"],
+        "Tetracycline": ["0.015 - 32.0", "0.015 - 16.0"],
+        "Linezolid": ["0.125 - 16.0", "0.0625 - 8.0"],
+        "Daptomycin": ["0.03125 - 16.0"],
+        "Rifampicin": ["0.002 - 8.0"],
+        "Trimeth-sulf": ["0.0625 - 16.0", "0.0625 - 8.0"],
+    }
+
+    for i in range(len(antibiotics)):
+        if antibiotics[i] in names_to_conc:
+            conc = names_to_conc[antibiotics[i]][0].split("-")
+            conc_low = float(conc[0])
+            conc_high = float(conc[1])
+
+            box_witdh = 0.4
+            fig.add_vrect(
+                x0=i - box_witdh,
+                x1=i + box_witdh,
+                y0=0.99 - (10 - np.log2(conc_low / 4)) / 23,
+                y1=1.01 - (10 - np.log2(conc_high / 4)) / 23,
+                fillcolor="maroon",
+                layer="below",
+                line_width=0,
+                opacity=0.8,
+            )
+
+            if len(names_to_conc[antibiotics[i]]) > 1:
+                conc = names_to_conc[antibiotics[i]][1].split("-")
+                conc_low = float(conc[0])
+                conc_high = float(conc[1])
+
+                box_witdh = 0.3
+                fig.add_vrect(
+                    x0=i - box_witdh,
+                    x1=i + box_witdh,
+                    y0=0.99 - (10 - np.log2(conc_low / 4)) / 23,
+                    y1=1.01 - (10 - np.log2(conc_high / 4)) / 23,
+                    fillcolor="ghostwhite",
+                    layer="below",
+                    line_width=0,
+                    opacity=0.3,
+                )
+
+    fig.add_vrect(
+        x0=10,
+        x1=16,
+        y0=0.97,
+        y1=1,
+        fillcolor="maroon",
+        line_width=0,
+        opacity=0.8,
+        annotation_text="Non-fastidious concentration ranges",
+        annotation_position="top",
+    )
+    fig.add_vrect(
+        x0=16.5,
+        x1=22.5,
+        y0=0.97,
+        y1=1,
+        fillcolor="ghostwhite",
+        line_width=0,
+        opacity=0.3,
+        annotation_text="Fastidious concentration ranges",
+        annotation_position="top",
+    )
 
 
 def plotly_dotplot(plot_df: pd.DataFrame, antibiotics: list) -> None:
@@ -139,6 +225,8 @@ def plotly_dotplot(plot_df: pd.DataFrame, antibiotics: list) -> None:
 
     # Update dot color
     fig.for_each_trace(change_trace_color)
+
+    add_rectangles_to_plot(fig, antibiotics)
 
     # Modify x-ticks, y-ticks, legend and title
     fig.update_layout(

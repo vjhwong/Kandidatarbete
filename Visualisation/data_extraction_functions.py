@@ -1,7 +1,5 @@
 import pandas as pd
 import numpy as np
-import plotly.express as px
-from pprint import pprint
 
 
 def extract_chosen_isolates(

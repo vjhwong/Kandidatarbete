@@ -26,6 +26,7 @@ def create_plot_df(
     # Initialize lists to hold values used for plotting
     x_values, y_values = [], []
     SIR_category_list = []
+    MIC_value_list = []
     isolate_names = []
     on_off_scale = []
     pathogen_list = []
@@ -39,6 +40,7 @@ def create_plot_df(
             isolate_names.append(isolate)
             x_values.append(x_value_jitter)
             SIR_category_list.append(mic_dict[SIR_category][1])
+            MIC_value_list.append(2 ** (mic_value))
             on_off_scale.append(scale)
             pathogen_list.append(pathogen)
             if scale is True:
@@ -66,6 +68,7 @@ def create_plot_df(
             "SIR": SIR_category_list,
             "Scale": on_off_scale,
             "Pathogen": pathogen_list,
+            "MIC value": MIC_value_list,
         },
         index=np.arange(len(x_values)),
     )
@@ -111,7 +114,7 @@ def plotly_dotplot(plot_df: pd.DataFrame, antibiotics: list) -> None:
         hover_name="Isolate names",
         color="SIR",
         opacity=0.6,
-        title="Isolate log2(MIC-values) for different antibiotics",
+        title="Isolate MIC-values for different antibiotics",
         range_y=[-11, 12],
         template="plotly_dark",
         hover_data={
@@ -119,6 +122,7 @@ def plotly_dotplot(plot_df: pd.DataFrame, antibiotics: list) -> None:
             "Log2(MIC-value)": False,
             "Scale": False,
             "Pathogen": True,
+            "MIC value": True,
         },
     )
 
